@@ -16,13 +16,13 @@ import java.sql.Statement;
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
-    private static final String SQL_CREATE = "insert into customer(name, email, password) "+
-            "values(?, ?, ?)";
-    private static final String SQL_FIND_BY_EMAIL = "select id, name, email, password FROM " +
-            "customer where email = ?";
+    private static final String SQL_CREATE = "INSERT INTO CUSTOMER(NAME, EMAIL, PASSWORD) "+
+            "VALUES(?, ?, ?)";
+    private static final String SQL_FIND_BY_EMAIL = "SELECT ID, NAME, EMAIL, PASSWORD FROM " +
+            "CUSTOMER WHERE EMAIL = ?";
 
-    private static final String SQL_FIND_BY_ID = "select id, name, email, password FROM " +
-            "customer where id = ?";
+    private static final String SQL_FIND_BY_ID = "SELECT ID, NAME, EMAIL, PASSWORD FROM " +
+            "CUSTOMER WHERE ID = ?";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
