@@ -15,13 +15,21 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer validate(String email, String password) throws AuthException {
         if(email!=null) email = email.toLowerCase();
-        return customerRepository.findByEmailAndPassword(email, password);
+        if(customerRepository.findCredentials(email,password)){
+            return customerRepository.findByEmail(email);
+        }else{
+            return null;
+        }
     }
 
     @Override
     public Customer register(String name, String email, String password) throws AuthException {
         if(email!=null) email = email.toLowerCase();
-        Integer customerId = customerRepository.create(name, email, password);
-        return customerRepository.findById(customerId);
+        if(customerRepository.createCredentials(email, password)!=null){
+            Integer customerId = customerRepository.create(name, email);
+            return customerRepository.findById(customerId);
+        }else{
+            return null;
+        }
     }
 }

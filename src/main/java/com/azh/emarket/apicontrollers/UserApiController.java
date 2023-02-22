@@ -26,15 +26,12 @@ public class UserApiController {
     CustomerService customerService;
 
     @PostMapping("/register")
-    public ResponseEntity<Map<String, String>> register(@RequestBody Map<String, Object> customerMap){
+    public ResponseEntity<Customer> register(@RequestBody Map<String, Object> customerMap){
         String name = String.valueOf(customerMap.get("name"));
         String email = String.valueOf(customerMap.get("email"));
         String password = String.valueOf(customerMap.get("password"));
         Customer customer = customerService.register(name, email, EncryptData.generate(password));
-        HashMap<String, String> response = new HashMap<>();
-        response.put("name", customer.getName());
-        response.put("email", customer.getEmail());
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
     @PostMapping("/login")
