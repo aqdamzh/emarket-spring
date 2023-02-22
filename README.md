@@ -171,7 +171,6 @@ Content-Type: application/json
 ```
 Authorization: Bearer {token}
 Accept: application/json
-Content-Type: application/json
 ```
 **Successful Response:**
 ```
@@ -209,6 +208,237 @@ Content-Type: application/json
   ...
   ]
 ```
+
+## Cart API
+### View Cart
+**Request:**
+***GET /api/cart*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+```
+**Successful Response:**
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+[
+  {
+    "product": {
+      "id": 11,
+      "name": "xiomi 12",
+      "price": 8499000,
+      "category": {
+        "id": 3,
+        "name": "handphone"
+      },
+      "seller": {
+        "id": 1,
+        "name": "admin"
+      }
+    },
+    "productAmount": 3
+  },
+  {
+    "product": {
+      "id": 15,
+      "name": "sennheiser hd 450",
+      "price": 2199000,
+      "category": {
+        "id": 4,
+        "name": "headset"
+      },
+      "seller": {
+        "id": 1,
+        "name": "admin"
+      }
+    },
+    "productAmount": 2
+  },
+  ...
+ ]
+```
+### Add to Cart
+**Request:** 
+***POST /api/cart/add*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+Content-Type: application/json
+```
+```json
+{
+  "productId": 19,
+  "productAmount":1
+}
+```
+**Successful Response:**
+```
+HTTP/1.1 201 Created
+Content-Type: application/json
+```
+```json
+{
+  "product": {
+    "id": 19,
+    "name": "apple macBook pro M1",
+    "price": 15400000,
+    "category": {
+      "id": 1,
+      "name": "laptop"
+    },
+    "seller": {
+      "id": 1,
+      "name": "admin"
+    }
+  },
+  "productAmount": 1
+}
+```
+
+### Delete Product from Cart
+**Request:** 
+***POST /api/cart/delete*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+Content-Type: application/json
+```
+```json
+{
+  "productId": 19
+}
+```
+**Successful Response:**
+```
+HTTP/1.1 202 Accepted
+Content-Type: application/json
+```
+```json
+{
+  "product": {
+    "id": 19,
+    "name": "apple macBook pro M1",
+    "price": 15400000,
+    "category": {
+      "id": 1,
+      "name": "laptop"
+    },
+    "seller": {
+      "id": 1,
+      "name": "admin"
+    }
+  },
+  "productAmount": 1
+}
+```
+
+### View Checkout Product
+**Request:**
+***GET /api/cart/checkout*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+```
+**Successful Response:**
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+[
+  {
+    "timestamp": "2023-02-22T15:41:10.192+00:00",
+    "product": {
+      "id": 11,
+      "name": "xiomi 12",
+      "price": 8499000,
+      "category": {
+        "id": 3,
+        "name": "handphone"
+      },
+      "seller": {
+        "id": 1,
+        "name": "admin"
+      }
+    },
+    "productAmount": 3
+  },
+  {
+    "timestamp": "2023-02-22T15:41:10.197+00:00",
+    "product": {
+      "id": 15,
+      "name": "sennheiser hd 450",
+      "price": 2199000,
+      "category": {
+        "id": 4,
+        "name": "headset"
+      },
+      "seller": {
+        "id": 1,
+        "name": "admin"
+      }
+    },
+    "productAmount": 2
+  },
+  ...
+ ]
+```
+
+### Proces Cart to Checkout
+**Request:** 
+***POST /api/cart/checkout*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+```
+**Successful Response:**
+```
+HTTP/1.1 202 Accepted
+Content-Type: application/json
+```
+```json
+[
+  {
+    "timestamp": "2023-02-22T15:41:10.192+00:00",
+    "product": {
+      "id": 11,
+      "name": "xiomi 12",
+      "price": 8499000,
+      "category": {
+        "id": 3,
+        "name": "handphone"
+      },
+      "seller": {
+        "id": 1,
+        "name": "admin"
+      }
+    },
+    "productAmount": 3
+  },
+  {
+    "timestamp": "2023-02-22T15:41:10.197+00:00",
+    "product": {
+      "id": 15,
+      "name": "sennheiser hd 450",
+      "price": 2199000,
+      "category": {
+        "id": 4,
+        "name": "headset"
+      },
+      "seller": {
+        "id": 1,
+        "name": "admin"
+      }
+    },
+    "productAmount": 2
+  },
+  ...
+ ]
+```
+
+
 
 
 ## License
