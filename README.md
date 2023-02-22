@@ -61,6 +61,10 @@ JSON Web Token Support For The JVM. <br />
   * POST /api/cart/delete
   * GET /api/cart/checkout
   * POST /api/cart/checkout
+* [Transaction API](#transaction-api)
+  * POST /api/transactions/payment
+  * GET /api/transactions
+  * GET /api/transactions/payment
 
 ## Customer API
 ### Login
@@ -438,6 +442,101 @@ Content-Type: application/json
  ]
 ```
 
+## Transaction API
+### Process Transaction
+**Request:**
+***POST /api/transactions/payment*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+Content-Type: application/json
+```
+```json
+{
+  "paymentId": 3
+}
+```
+**Successful Response:**
+```
+HTTP/1.1 201 Created
+Content-Type: application/json
+```
+```json
+{
+  "id": 4,
+  "timestamp": "2023-02-22T15:51:47.268+00:00",
+  "totalPay": 31894000,
+  "payment": {
+    "id": 3,
+    "name": "gopoy"
+  }
+}
+```
+### View Transaction
+**Request:**
+***GET /api/transactions*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+```
+**Successful Response:**
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+[
+  {
+    "id": 3,
+    "timestamp": "2023-02-22T13:16:42.423+00:00",
+    "totalPay": 160660000,
+    "payment": {
+      "id": 1,
+      "name": "oao"
+    }
+  },
+  {
+    "id": 4,
+    "timestamp": "2023-02-22T15:51:47.268+00:00",
+    "totalPay": 31894000,
+    "payment": {
+      "id": 3,
+      "name": "gopoy"
+    }
+  },
+  ...
+]
+```
+
+### View Payment type
+**Request:**
+***GET /api/transactions/payment*** HTTP/1.1
+```
+Authorization: Bearer {token}
+Accept: application/json
+```
+**Successful Response:**
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+[
+  {
+    "id": 1,
+    "name": "oao"
+  },
+  {
+    "id": 2,
+    "name": "bbi"
+  },
+  {
+    "id": 3,
+    "name": "gopoy"
+  },
+  ...
+]
+```
 
 
 
