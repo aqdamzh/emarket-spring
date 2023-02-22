@@ -39,5 +39,35 @@ The **Spring Web** Build web, including RESTful, applications using Spring MVC. 
 ### JSON Web Token
 JSON Web Token Support For The JVM. <br />
 [JSON Web Token](https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt)
+
+# API Documentation Example
+
+
+## Login
+**You send:**  Your  login credentials.
+**You get:** An `API-Token` with wich you can make further actions.
+
+**Request:**
+```json
+POST /api/users/login HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "foo@bar.com",
+    "password": "1234567" 
+}
+```
+**Successful Response:**
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+   "apitoken": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzcwNTgxNDksImV4cCI6MTY3NzA2NTM0OSwiY3VzdG9tZXJJZCI6M30.MjZ3zRUJzqxNhh10djnMDWYcxt-WViSySWYOnuxHQ10"
+}
+```
+
+
 ## License
 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
