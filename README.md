@@ -68,8 +68,8 @@ JSON Web Token Support For The JVM. <br />
 **You get:** An `API-Token` with wich you can make further actions.
 
 **Request:**
+***POST /api/users/login*** HTTP/1.1
 ```
-POST /api/users/login HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 ```
@@ -93,8 +93,8 @@ Content-Type: application/json
 ### Register
 
 **Request:**
+***POST /api/users/register*** HTTP/1.1
 ```
-POST /api/users/register HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 ```
@@ -122,8 +122,8 @@ Content-Type: application/json
 ### List Product
 
 **Request:**
+***GET /api/products** HTTP/1.1
 ```
-GET /api/products HTTP/1.1
 Authorization: Bearer {token}
 Accept: application/json
 ```
@@ -167,8 +167,8 @@ Content-Type: application/json
 ### List Product by Category
 
 **Request:**
+***GET /api/products/filter/{category}*** HTTP/1.1
 ```
-**GET /api/products/filter/{category}** HTTP/1.1
 Authorization: Bearer {token}
 Accept: application/json
 Content-Type: application/json
