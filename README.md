@@ -35,9 +35,9 @@ The **Spring Web** Build web, including RESTful, applications using Spring MVC. 
 [more about JDBC API](https://spring.io/guides/gs/relational-data-access/)
 ### PostgreSQL Driver
 **PostgreSQL Driver** is A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code. <br />
-[more about glide](https://spring.io/guides/gs/relational-data-access/)
+[PostgreSQL Driver](https://spring.io/guides/gs/relational-data-access/)
 ### JSON Web Token
 JSON Web Token Support For The JVM. <br />
-[more about Image Cropper](https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt)
+[JSON Web Token](https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt)
 ## License
 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
