@@ -20,6 +20,7 @@ public class EmarketApplication {
 		registrationBean.setFilter(customerAuthFilter);
 		registrationBean.addUrlPatterns("/api/products/*");
 		registrationBean.addUrlPatterns("/api/cart/*");
+		registrationBean.addUrlPatterns("/api/transactions/*");
 		return registrationBean;
 	}
 

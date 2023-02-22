@@ -41,6 +41,8 @@ public class CartRepositoryImpl implements CartRepository {
             "FROM CHECKOUT CA JOIN PRODUCT P ON P.ID=CA.PRODUCT_ID " +
             "JOIN CATEGORY CT ON CT.ID=P.CATEGORY_ID JOIN SELLER S ON S.ID=P.SELLER_ID WHERE CA.CUSTOMER_ID=?";
 
+    private static final String SQL_DELETE_CUSTOMER_CHECKOUT = "DELETE FROM CHECKOUT WHERE CUSTOMER_ID=?";
+
     @Autowired
     JdbcTemplate jdbcTemplate;
 
@@ -154,6 +156,20 @@ public class CartRepositoryImpl implements CartRepository {
             return jdbcTemplate.query(SQL_FIND_CHECKOUT_CUSTOMER, new Object[]{customerId}, checkoutRowMapper);
         }catch (Exception e){
             throw new ResourceNotFoundException("Checkout not found");
+        }
+    }
+
+    @Override
+    public boolean deleteCustomerCheckout(Integer customerId) throws ResourceNotFoundException {
+        try {
+            jdbcTemplate.update(con -> {
+                PreparedStatement ps = con.prepareStatement(SQL_DELETE_CUSTOMER_CHECKOUT);
+                ps.setInt(1, customerId);
+                return ps;
+            });
+            return true;
+        }catch (Exception e){
+            throw new BadRequestException("Failed to delete customer checkout");
         }
     }
 

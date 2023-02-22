@@ -22,4 +22,6 @@ public interface CartRepository {
     boolean insertIntoCheckout(Integer customerId, Integer productId, Integer productAmount);
 
     List<Checkout> findCheckoutByCustomer(Integer customerId) throws ResourceNotFoundException;
+
+    boolean deleteCustomerCheckout(Integer customerId) throws ResourceNotFoundException;
 }
