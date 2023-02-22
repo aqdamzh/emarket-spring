@@ -25,7 +25,7 @@ public class ProductApiController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/filter/{category}")
     public ResponseEntity<List<Product>> getProductsByCategory(@PathVariable String category){
         List<Product> products = productService.fetchByCategory(category);
         return new ResponseEntity<>(products, HttpStatus.OK);

@@ -19,6 +19,7 @@ public class EmarketApplication {
 		CustomerAuthFilter customerAuthFilter = new CustomerAuthFilter();
 		registrationBean.setFilter(customerAuthFilter);
 		registrationBean.addUrlPatterns("/api/products/*");
+		registrationBean.addUrlPatterns("/api/cart/*");
 		return registrationBean;
 	}
 
