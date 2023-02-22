@@ -69,7 +69,7 @@ JSON Web Token Support For The JVM. <br />
 
 **Request:**
 ```
-***POST /api/users/login*** HTTP/1.1
+POST /api/users/login HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 ```
@@ -94,7 +94,7 @@ Content-Type: application/json
 
 **Request:**
 ```
-***POST /api/users/login*** HTTP/1.1
+POST /api/users/register HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 ```
@@ -123,7 +123,7 @@ Content-Type: application/json
 
 **Request:**
 ```
-***GET /api/products*** HTTP/1.1
+GET /api/products HTTP/1.1
 Authorization: Bearer {token}
 Accept: application/json
 ```
@@ -168,11 +168,10 @@ Content-Type: application/json
 
 **Request:**
 ```
-***GET /api/products/filter/{category}*** HTTP/1.1
+**GET /api/products/filter/{category}** HTTP/1.1
 Authorization: Bearer {token}
 Accept: application/json
 Content-Type: application/json
-```
 ```
 **Successful Response:**
 ```
