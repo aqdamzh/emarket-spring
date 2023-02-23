@@ -7,24 +7,51 @@
    * [Tittle](#emarket-spring-boot-backend)
    * [Table of contents](#table-of-contents)
    * [Installation](#installation)
-   * [Configuration](#configuration)
-      * [Programming Language](#programming-language)
+   * [Dev Configuration](#dev-configuration)
       * [Maven](maven)
+      * [Docker](docker)
+      * [Database](database)
    * [Dependencies Used](#dependencies-used)
 <!--te-->
 
 ## Installation
-
-Clone this repository and import into **Maven**
-
+Clone this repository and run docker compose.
 ```bash
 git clone https://github.com/aqdamzh/emarket-spring.git
 ```
+### Docker
+Docker is a platform designed to help developers build, share, and run modern applications.
+[more about Docker](https://www.docker.com/)
+### Docker Compose
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+[more about Docker Compose](https://docs.docker.com/compose/)
 
-## Configuration
-### Programming Language:
-- java
+**Run Application with Docker Compose**
+```bash
+docker-compose up -d
+```
+**Stop Application running Aplication in docker**
+```bash
+docker-compose down
+```
+
+## Dev Configuration
+Clone this repository .
+```bash
+git clone https://github.com/aqdamzh/emarket-spring.git
+```
 ### Maven
+Run application with maven command.
+```bash
+$ mvn spring-boot:run
+```
+### Docker
+Build docker image for aplication.
+```bash
+$ docker build --tag aqdamzh/emarket-spring:1.0 .
+``
+### Database
+configure postgres database from init.sql file .
 
 ## Dependencies Used
 ### Spring Web
