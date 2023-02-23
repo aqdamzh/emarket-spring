@@ -41,7 +41,8 @@ JSON Web Token Support For The JVM. <br />
 [JSON Web Token](https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt)
 
 
-
+# Entity Relationship Diagram
+![ERD](https://user-images.githubusercontent.com/34984085/220807148-ac02758b-dde9-4b9d-a867-0042f4a70a15.jpeg)
 
 
 # API Documentation
