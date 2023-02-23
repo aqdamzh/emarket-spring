@@ -44,12 +44,12 @@ git clone https://github.com/aqdamzh/emarket-spring.git
 ### Maven
 Run application with maven command.
 ```bash
-$ mvn spring-boot:run
+mvn spring-boot:run
 ```
 ### Docker
 Build docker image for aplication. Run command dockerfile file.
 ```bash
-$ docker build --tag aqdamzh/emarket-spring:1.0 .
+docker build --tag aqdamzh/emarket-spring:1.0 .
 ```
 ### Database
 configure postgres database from init.sql file .
