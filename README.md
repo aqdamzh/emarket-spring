@@ -27,6 +27,7 @@ Compose is a tool for defining and running multi-container Docker applications. 
 [more about Docker Compose](https://docs.docker.com/compose/)
 
 **Run Application with Docker Compose**
+Run command from docker-compose.yml file.
 ```bash
 docker-compose up -d
 ```
@@ -46,10 +47,10 @@ Run application with maven command.
 $ mvn spring-boot:run
 ```
 ### Docker
-Build docker image for aplication.
+Build docker image for aplication. Run command dockerfile file.
 ```bash
 $ docker build --tag aqdamzh/emarket-spring:1.0 .
-``
+```
 ### Database
 configure postgres database from init.sql file .
 
