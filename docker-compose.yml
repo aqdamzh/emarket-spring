@@ -1,0 +1,29 @@
+services:
+  db:
+    container_name: postgres-emarket
+    image: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - emarket_network
+  backend:
+    container_name: backend-emarket
+    image: emarket-spring:1.0
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - SC_NETWORK=postgres-emarket
+      - PG_DATABASE=emarket_db
+      - DB_USERNAME=azh
+      - DB_PASSWORD=azh
+    networks:
+      - emarket_network
+
+networks:
+  emarket_network:
+    name: emarket_network
