@@ -12,6 +12,8 @@
       * [Docker](docker)
       * [Database](database)
    * [Dependencies Used](#dependencies-used)
+   * [Entity Relationship Diagram](#entity-relationship-diagram)
+   * [API Documentation](#api-documentation)
 <!--te-->
 
 ## Installation
